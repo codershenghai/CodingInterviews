@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · My GitBook</title>
+        <title>面试题321从上到下打印二叉树 · My GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="面试题3_数组中重复的数字.html" />
+    <link rel="next" href="面试题32_2_把二叉树打印成多行.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="面试题31_栈的压入弹出序列.html" />
     
 
     </head>
@@ -107,7 +107,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -536,7 +536,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.35" data-path="面试题32_1_从上到下打印二叉树.html">
+        <li class="chapter active" data-level="1.35" data-path="面试题32_1_从上到下打印二叉树.html">
             
                 <a href="面试题32_1_从上到下打印二叉树.html">
             
@@ -1073,7 +1073,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >面试题321从上到下打印二叉树</a>
     </h1>
 </div>
 
@@ -1088,7 +1088,43 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
+                                <h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1>
+<p>&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x6253;&#x5370;&#x51FA;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x540C;&#x4E00;&#x5C42;&#x7684;&#x8282;&#x70B9;&#x6309;&#x7167;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x7684;&#x987A;&#x5E8F;&#x6253;&#x5370;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-python">&#x7ED9;&#x5B9A;&#x4E8C;&#x53C9;&#x6811;: [<span class="hljs-number">3</span>,<span class="hljs-number">9</span>,<span class="hljs-number">20</span>,null,null,<span class="hljs-number">15</span>,<span class="hljs-number">7</span>],
+    <span class="hljs-number">3</span>
+   / \
+  <span class="hljs-number">9</span>  <span class="hljs-number">20</span>
+    /  \
+   <span class="hljs-number">15</span>   <span class="hljs-number">7</span>
+
+&#x8FD4;&#x56DE;&#xFF1A;
+[<span class="hljs-number">3</span>,<span class="hljs-number">9</span>,<span class="hljs-number">20</span>,<span class="hljs-number">15</span>,<span class="hljs-number">7</span>]
+</code></pre>
+<h1 id="&#x9898;&#x89E3;">&#x9898;&#x89E3;</h1>
+<p>&#x5229;&#x7528;&#x961F;&#x5217;&#x8FDB;&#x884C;&#x7B80;&#x5355;&#x7684;&#x5C42;&#x6B21;&#x904D;&#x5386;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] levelOrder(TreeNode root) {
+    ArrayList&lt;Integer&gt; res = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+    Queue&lt;TreeNode&gt; queue = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
+
+    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] {};
+    queue.offer(root);
+
+    <span class="hljs-keyword">while</span> (!queue.isEmpty()) {
+        TreeNode p = queue.poll();
+        res.add(p.val);
+        <span class="hljs-keyword">if</span> (p.left != <span class="hljs-keyword">null</span>)
+            queue.offer(p.left);
+        <span class="hljs-keyword">if</span> (p.right != <span class="hljs-keyword">null</span>)
+            queue.offer(p.right);
+    }
+    <span class="hljs-keyword">int</span>[] resArr = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[res.size()];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; res.size(); i++)
+        resArr[i] = res.get(i);
+    <span class="hljs-keyword">return</span> resArr;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1116,12 +1152,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="面试题31_栈的压入弹出序列.html" class="navigation navigation-prev " aria-label="Previous page: 面试题31_栈的压入弹出序列">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="面试题3_数组中重复的数字.html" class="navigation navigation-next " aria-label="Next page: 面试题3_数组中重复的数字">
+                <a href="面试题32_2_把二叉树打印成多行.html" class="navigation navigation-next " aria-label="Next page: 面试题322把二叉树打印成多行">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1132,7 +1168,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.2","depth":1,"next":{"title":"面试题3_数组中重复的数字","level":"1.3","depth":1,"path":"面试题3_数组中重复的数字.md","ref":"面试题3_数组中重复的数字.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"README.md","mtime":"2020-02-08T10:02:07.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"面试题321从上到下打印二叉树","level":"1.35","depth":1,"next":{"title":"面试题322把二叉树打印成多行","level":"1.36","depth":1,"path":"面试题32_2_把二叉树打印成多行.md","ref":"面试题32_2_把二叉树打印成多行.md","articles":[]},"previous":{"title":"面试题31_栈的压入弹出序列","level":"1.34","depth":1,"path":"面试题31_栈的压入弹出序列.md","ref":"面试题31_栈的压入弹出序列.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"面试题32_1_从上到下打印二叉树.md","mtime":"2020-02-28T13:36:15.373Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

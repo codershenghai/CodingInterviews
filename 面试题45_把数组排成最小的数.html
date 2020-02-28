@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · My GitBook</title>
+        <title>面试题45_把数组排成最小的数 · My GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="面试题3_数组中重复的数字.html" />
+    <link rel="next" href="面试题46_把数字翻译成字符串.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="面试题44_数字序列中某一位的数字.html" />
     
 
     </head>
@@ -107,7 +107,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -731,7 +731,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.50" data-path="面试题45_把数组排成最小的数.html">
+        <li class="chapter active" data-level="1.50" data-path="面试题45_把数组排成最小的数.html">
             
                 <a href="面试题45_把数组排成最小的数.html">
             
@@ -1073,7 +1073,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >面试题45_把数组排成最小的数</a>
     </h1>
 </div>
 
@@ -1088,7 +1088,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
+                                <h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1>
+<p>&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x6B63;&#x6574;&#x6570;&#x6570;&#x7EC4;&#xFF0C;&#x628A;&#x6570;&#x7EC4;&#x91CC;&#x6240;&#x6709;&#x6570;&#x5B57;&#x62FC;&#x63A5;&#x8D77;&#x6765;&#x6392;&#x6210;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x6253;&#x5370;&#x80FD;&#x62FC;&#x63A5;&#x51FA;&#x7684;&#x6240;&#x6709;&#x6570;&#x5B57;&#x4E2D;&#x6700;&#x5C0F;&#x7684;&#x4E00;&#x4E2A;&#x3002;</p>
+<h1 id="&#x9898;&#x89E3;">&#x9898;&#x89E3;</h1>
+<p>&#x4F9D;&#x636E;&#x8D2A;&#x5FC3;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x4E24;&#x4E24;&#x6BD4;&#x8F83;&#x6570;&#x5B57;&#x4E4B;&#x95F4;&#x7684;&#x7EC4;&#x5408;&#xFF0C;&#x5C06;&#x7ED3;&#x679C;&#x5C0F;&#x7684;&#x653E;&#x7F6E;&#x5728;&#x524D;&#x9762;&#x3002;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x64CD;&#x4F5C;&#xFF0C;&#x9996;&#x5148;&#x5C06;&#x6570;&#x5B57;&#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x3002;</p>
+<p>&#x4F46;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6700;&#x5C0F;&#xFF1F;&#x9898;&#x76EE;&#x8981;&#x6C42;&#x7684;&#x662F;&#x6211;&#x4EEC;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#xFF0C;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#xFF0C;&#x6392;&#x6210;&#x4E00;&#x4E2A;&#x6700;&#x5C0F;&#x7684;&#x6570;&#x5B57;&#x3002;&#x4E3A;&#x6B64;&#xFF0C;&#x5BF9;&#x4E8E;str1&#x548C;str2&#xFF0C;&#x5C06;&#x5B83;&#x4EEC;&#x62FC;&#x63A5;&#x8D77;&#x6765;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x62FC;&#x63A5;&#x65B9;&#x6CD5;&#xFF0C;&#x5206;&#x522B;&#x662F;str1+str2&#x548C;str2+str1&#x3002;&#x76F4;&#x63A5;&#x6BD4;&#x8F83;&#x8FD9;&#x4E24;&#x79CD;&#x62FC;&#x63A5;&#x7ED3;&#x679C;&#xFF0C;&#x5B9A;&#x4E49;&#x4E3A;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">minNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
+    String[] strNums = <span class="hljs-keyword">new</span> String[nums.length];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++)
+        strNums[i] = String.valueOf(nums[i]);
+
+    Arrays.sort(strNums, <span class="hljs-keyword">new</span> Comparator&lt;String&gt;() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(String o1, String o2)</span> </span>{
+            <span class="hljs-keyword">return</span> (o1+o2).compareTo(o2+o1);
+        }
+    });
+    <span class="hljs-comment">// &#x62FC;&#x63A5;&#x6392;&#x5E8F;&#x540E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x7EC4;</span>
+    StringBuilder builder = <span class="hljs-keyword">new</span> StringBuilder();
+    <span class="hljs-keyword">for</span> (String str : strNums)
+        builder.append(str);
+    <span class="hljs-keyword">return</span> builder.toString();
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1116,12 +1138,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="面试题44_数字序列中某一位的数字.html" class="navigation navigation-prev " aria-label="Previous page: 面试题44_数字序列中某一位的数字">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="面试题3_数组中重复的数字.html" class="navigation navigation-next " aria-label="Next page: 面试题3_数组中重复的数字">
+                <a href="面试题46_把数字翻译成字符串.html" class="navigation navigation-next " aria-label="Next page: 面试题46_把数字翻译成字符串">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1132,7 +1154,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.2","depth":1,"next":{"title":"面试题3_数组中重复的数字","level":"1.3","depth":1,"path":"面试题3_数组中重复的数字.md","ref":"面试题3_数组中重复的数字.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"README.md","mtime":"2020-02-08T10:02:07.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"面试题45_把数组排成最小的数","level":"1.50","depth":1,"next":{"title":"面试题46_把数字翻译成字符串","level":"1.51","depth":1,"path":"面试题46_把数字翻译成字符串.md","ref":"面试题46_把数字翻译成字符串.md","articles":[]},"previous":{"title":"面试题44_数字序列中某一位的数字","level":"1.49","depth":1,"path":"面试题44_数字序列中某一位的数字.md","ref":"面试题44_数字序列中某一位的数字.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"面试题45_把数组排成最小的数.md","mtime":"2020-02-24T09:39:18.380Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

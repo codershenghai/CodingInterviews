@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · My GitBook</title>
+        <title>面试题6_从尾到头打印链表 · My GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="面试题3_数组中重复的数字.html" />
+    <link rel="next" href="面试题7_重建二叉树.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="面试题5_替换空格.html" />
     
 
     </head>
@@ -107,7 +107,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -159,7 +159,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="面试题6_从尾到头打印链表.html">
+        <li class="chapter active" data-level="1.6" data-path="面试题6_从尾到头打印链表.html">
             
                 <a href="面试题6_从尾到头打印链表.html">
             
@@ -1073,7 +1073,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >面试题6_从尾到头打印链表</a>
     </h1>
 </div>
 
@@ -1088,7 +1088,48 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
+                                <h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1>
+<p>&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x94FE;&#x8868;&#x7684;&#x5934;&#x8282;&#x70B9;&#xFF0C;&#x4ECE;&#x5C3E;&#x5230;&#x5934;&#x53CD;&#x8FC7;&#x6765;&#x8FD4;&#x56DE;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x503C;&#xFF08;&#x7528;&#x6570;&#x7EC4;&#x8FD4;&#x56DE;&#xFF09;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;head = [1,3,2]
+&#x8F93;&#x51FA;&#xFF1A;[2,3,1]
+</code></pre><h1 id="&#x9898;&#x89E3;&#x4E00;">&#x9898;&#x89E3;&#x4E00;</h1>
+<p>&#x5229;&#x7528;&#x6808;&#x5148;&#x5165;&#x540E;&#x51FA;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x904D;&#x5386;&#x94FE;&#x8868;&#xFF0C;&#x5C06;&#x94FE;&#x8868;&#x6240;&#x6709;&#x8282;&#x70B9;&#x5B58;&#x5165;&#x6808;&#x4E2D;&#xFF0C;&#x518D;&#x5C06;&#x6240;&#x6709;&#x8282;&#x70B9;&#x5168;&#x90E8;&#x51FA;&#x6808;&#xFF0C;&#x53EF;&#x5C06;&#x94FE;&#x8868;&#x5012;&#x7F6E;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] reversePrint(ListNode head) {
+    Stack&lt;Integer&gt; stack = <span class="hljs-keyword">new</span> Stack&lt;&gt;();
+    <span class="hljs-keyword">while</span> (head != <span class="hljs-keyword">null</span>) {
+        stack.add(head.val);
+        head = head.next;
+    }
+    <span class="hljs-keyword">int</span>[] list = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[stack.size()];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; list.length; i++)
+        list[i] = stack.pop();
+    <span class="hljs-keyword">return</span> list;
+}
+</code></pre>
+<h1 id="&#x9898;&#x89E3;&#x4E8C;">&#x9898;&#x89E3;&#x4E8C;</h1>
+<p>&#x9012;&#x5F52;&#x672C;&#x8D28;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6808;&#x7ED3;&#x6784;&#xFF0C;&#x5F88;&#x81EA;&#x7136;&#x5730;&#x60F3;&#x5230;&#x9012;&#x5F52;&#x3002;&#x9996;&#x5148;&#x5217;&#x51FA;&#x9012;&#x5F52;&#x7EC8;&#x6B62;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x5F53;&#x8BBF;&#x95EE;&#x5230;&#x94FE;&#x8868;&#x5C3E;&#x65F6;&#x4F20;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x6570;&#x7EC4;&#xFF1B;&#x7136;&#x540E;&#x627E;&#x8FD4;&#x56DE;&#x503C;&#xFF1B;&#x6700;&#x540E;&#x662F;&#x5199;&#x672C;&#x7EA7;&#x9012;&#x5F52;&#x5E94;&#x8BE5;&#x505A;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5C06;&#x672C;&#x7EA7;&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x503C;&#x6DFB;&#x52A0;&#x5230;&#x4F20;&#x56DE;&#x7684;&#x6570;&#x7EC4;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] reversePrint(ListNode head) {
+    ArrayList&lt;Integer&gt; list = reversePrintHelper(head);
+    <span class="hljs-keyword">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[list.size()];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; list.size(); i++)
+        res[i] = list.get(i);
+    <span class="hljs-keyword">return</span> res;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> ArrayList&lt;Integer&gt; <span class="hljs-title">reversePrintHelper</span><span class="hljs-params">(ListNode listNode)</span> </span>{
+    <span class="hljs-comment">// 1.&#x9012;&#x5F52;&#x7EC8;&#x6B62;&#x7684;&#x6761;&#x4EF6;</span>
+    <span class="hljs-keyword">if</span> (listNode == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+
+    <span class="hljs-comment">// 2.&#x627E;&#x8FD4;&#x56DE;&#x503C;</span>
+    ArrayList&lt;Integer&gt; list = reversePrintHelper(listNode.next);
+
+    <span class="hljs-comment">// 3.&#x672C;&#x7EA7;&#x9012;&#x5F52;&#x5E94;&#x8BE5;&#x505A;&#x4EC0;&#x4E48;</span>
+    list.add(listNode.val);
+    <span class="hljs-keyword">return</span> list;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1116,12 +1157,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="面试题5_替换空格.html" class="navigation navigation-prev " aria-label="Previous page: 面试题5_替换空格">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="面试题3_数组中重复的数字.html" class="navigation navigation-next " aria-label="Next page: 面试题3_数组中重复的数字">
+                <a href="面试题7_重建二叉树.html" class="navigation navigation-next " aria-label="Next page: 面试题7_重建二叉树">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1132,7 +1173,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.2","depth":1,"next":{"title":"面试题3_数组中重复的数字","level":"1.3","depth":1,"path":"面试题3_数组中重复的数字.md","ref":"面试题3_数组中重复的数字.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"README.md","mtime":"2020-02-08T10:02:07.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"面试题6_从尾到头打印链表","level":"1.6","depth":1,"next":{"title":"面试题7_重建二叉树","level":"1.7","depth":1,"path":"面试题7_重建二叉树.md","ref":"面试题7_重建二叉树.md","articles":[]},"previous":{"title":"面试题5_替换空格","level":"1.5","depth":1,"path":"面试题5_替换空格.md","ref":"面试题5_替换空格.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"面试题6_从尾到头打印链表.md","mtime":"2020-02-26T16:42:56.494Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

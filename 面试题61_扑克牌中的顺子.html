@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · My GitBook</title>
+        <title>面试题61_扑克牌中的顺子 · My GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="面试题3_数组中重复的数字.html" />
+    <link rel="next" href="面试题62_圆圈中最后剩下的数字.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="面试题59_I_滑动窗口的最大值.html" />
     
 
     </head>
@@ -107,7 +107,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -978,7 +978,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.69" data-path="面试题61_扑克牌中的顺子.html">
+        <li class="chapter active" data-level="1.69" data-path="面试题61_扑克牌中的顺子.html">
             
                 <a href="面试题61_扑克牌中的顺子.html">
             
@@ -1073,7 +1073,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >面试题61_扑克牌中的顺子</a>
     </h1>
 </div>
 
@@ -1088,7 +1088,34 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
+                                <h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1>
+<p>LL&#x4ECA;&#x5929;&#x5FC3;&#x60C5;&#x7279;&#x522B;&#x597D;,&#x56E0;&#x4E3A;&#x4ED6;&#x53BB;&#x4E70;&#x4E86;&#x4E00;&#x526F;&#x6251;&#x514B;&#x724C;,&#x53D1;&#x73B0;&#x91CC;&#x9762;&#x5C45;&#x7136;&#x6709;2&#x4E2A;&#x5927;&#x738B;,2&#x4E2A;&#x5C0F;&#x738B;(&#x4E00;&#x526F;&#x724C;&#x539F;&#x672C;&#x662F;54&#x5F20;^_^)...&#x4ED6;&#x968F;&#x673A;&#x4ECE;&#x4E2D;&#x62BD;&#x51FA;&#x4E86;5&#x5F20;&#x724C;,&#x60F3;&#x6D4B;&#x6D4B;&#x81EA;&#x5DF1;&#x7684;&#x624B;&#x6C14;,&#x770B;&#x770B;&#x80FD;&#x4E0D;&#x80FD;&#x62BD;&#x5230;&#x987A;&#x5B50;,&#x5982;&#x679C;&#x62BD;&#x5230;&#x7684;&#x8BDD;,&#x4ED6;&#x51B3;&#x5B9A;&#x53BB;&#x4E70;&#x4F53;&#x80B2;&#x5F69;&#x7968;,&#x563F;&#x563F;&#xFF01;&#xFF01;&#x201C;&#x7EA2;&#x5FC3;A,&#x9ED1;&#x6843;3,&#x5C0F;&#x738B;,&#x5927;&#x738B;,&#x65B9;&#x7247;5&#x201D;,&#x201C;Oh My God!&#x201D;&#x4E0D;&#x662F;&#x987A;&#x5B50;.....LL&#x4E0D;&#x9AD8;&#x5174;&#x4E86;,&#x4ED6;&#x60F3;&#x4E86;&#x60F3;,&#x51B3;&#x5B9A;&#x5927;\&#x5C0F; &#x738B;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x4EFB;&#x4F55;&#x6570;&#x5B57;,&#x5E76;&#x4E14;A&#x770B;&#x4F5C;1,J&#x4E3A;11,Q&#x4E3A;12,K&#x4E3A;13&#x3002;&#x4E0A;&#x9762;&#x7684;5&#x5F20;&#x724C;&#x5C31;&#x53EF;&#x4EE5;&#x53D8;&#x6210;&#x201C;1,2,3,4,5&#x201D;(&#x5927;&#x5C0F;&#x738B;&#x5206;&#x522B;&#x770B;&#x4F5C;2&#x548C;4),&#x201C;So Lucky!&#x201D;&#x3002;LL&#x51B3;&#x5B9A;&#x53BB;&#x4E70;&#x4F53;&#x80B2;&#x5F69;&#x7968;&#x5566;&#x3002; &#x73B0;&#x5728;,&#x8981;&#x6C42;&#x4F60;&#x4F7F;&#x7528;&#x8FD9;&#x5E45;&#x724C;&#x6A21;&#x62DF;&#x4E0A;&#x9762;&#x7684;&#x8FC7;&#x7A0B;,&#x7136;&#x540E;&#x544A;&#x8BC9;&#x6211;&#x4EEC;LL&#x7684;&#x8FD0;&#x6C14;&#x5982;&#x4F55;&#xFF0C; &#x5982;&#x679C;&#x724C;&#x80FD;&#x7EC4;&#x6210;&#x987A;&#x5B50;&#x5C31;&#x8F93;&#x51FA;true&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x8F93;&#x51FA;false&#x3002;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x8D77;&#x89C1;,&#x4F60;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x5927;&#x5C0F;&#x738B;&#x662F;0&#x3002;</p>
+<h1 id="&#x9898;&#x89E3;">&#x9898;&#x89E3;</h1>
+<p>&#x611F;&#x89C9;&#x8FD9;&#x9053;&#x9898;&#x7684;&#x9898;&#x76EE;&#x610F;&#x601D;&#x5E76;&#x6CA1;&#x6709;&#x8BF4;&#x7684;&#x5F88;&#x6E05;&#x695A;&#xFF0C;&#x9898;&#x76EE;&#x7684;&#x610F;&#x601D;&#x662F;&#x5224;&#x65AD;&#x6251;&#x514B;&#x724C;&#x662F;&#x5426;&#x8FDE;&#x7EED;&#xFF0C;&#x5927;&#x5C0F;&#x738B;&#x53EF;&#x4EE5;&#x4EE3;&#x66FF;&#x4EFB;&#x4F55;&#x6570;&#x5B57;&#xFF08;&#x5C31;&#x548C;&#x6597;&#x5730;&#x4E3B;&#x4E2D;&#x7684;&#x765E;&#x5B50;&#x4E00;&#x6837;&#xFF09;&#x3002;</p>
+<p>&#x672C;&#x9898;&#x4E2D;&#x4F7F;&#x7528;0&#x4EE3;&#x8868;&#x5927;&#x5C0F;&#x738B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5148;&#x5BF9;&#x6570;&#x7EC4;&#x6392;&#x5E8F;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x5927;&#x5C0F;&#x738B;&#x7684;&#x6570;&#x91CF;&#x3002;&#x7136;&#x540E;&#x518D;&#x8BA1;&#x7B97;&#x6570;&#x7EC4;&#x4E2D;&#x6570;&#x7684;&#x95F4;&#x9694;&#xFF0C;&#x770B;&#x5927;&#x5C0F;&#x738B;&#x80FD;&#x4E0D;&#x80FD;&#x5C06;&#x5176;&#x586B;&#x5145;&#x3002;&#x5982;&#x679C;&#x5927;&#x5C0F;&#x738B;&#x7684;&#x6570;&#x91CF;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x95F4;&#x9694;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x90A3;&#x4E48;&#x4EE3;&#x8868;&#x6251;&#x514B;&#x724C;&#x4E2D;&#x6709;&#x987A;&#x5B50;&#xFF1B;&#x5426;&#x5219;&#x6251;&#x514B;&#x724C;&#x4E2D;&#x6CA1;&#x6709;&#x987A;&#x5B50;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isContinuous</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] numbers)</span> </span>{
+    <span class="hljs-keyword">if</span> (numbers.length == <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    Arrays.sort(numbers);
+    <span class="hljs-keyword">int</span> kings = <span class="hljs-number">0</span>, totalGap = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; numbers.length; i++) {
+        <span class="hljs-comment">// &#x8BA1;&#x7B97;&#x5927;&#x5C0F;&#x738B;&#x7684;&#x6570;&#x91CF;</span>
+        <span class="hljs-keyword">if</span> (numbers[i] == <span class="hljs-number">0</span>) {
+            kings++;
+            <span class="hljs-keyword">continue</span>;
+        }
+        <span class="hljs-comment">// &#x8BA1;&#x7B97;&#x6570;&#x7684;&#x95F4;&#x9694;</span>
+        <span class="hljs-keyword">if</span> (i &lt; numbers.length-<span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">int</span> gap = numbers[i+<span class="hljs-number">1</span>] - numbers[i] - <span class="hljs-number">1</span>;
+            <span class="hljs-comment">// &#x5982;&#x679C;&#x51FA;&#x73B0;&#x5BF9;&#x5B50;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;false</span>
+            <span class="hljs-keyword">if</span> (gap == -<span class="hljs-number">1</span>)
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+            totalGap += gap;
+        }
+    }
+    <span class="hljs-keyword">return</span> kings &gt;= totalGap;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1116,12 +1143,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="面试题59_I_滑动窗口的最大值.html" class="navigation navigation-prev " aria-label="Previous page: 面试题59I滑动窗口的最大值">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="面试题3_数组中重复的数字.html" class="navigation navigation-next " aria-label="Next page: 面试题3_数组中重复的数字">
+                <a href="面试题62_圆圈中最后剩下的数字.html" class="navigation navigation-next " aria-label="Next page: 面试题62_圆圈中最后剩下的数字">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1132,7 +1159,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.2","depth":1,"next":{"title":"面试题3_数组中重复的数字","level":"1.3","depth":1,"path":"面试题3_数组中重复的数字.md","ref":"面试题3_数组中重复的数字.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"README.md","mtime":"2020-02-08T10:02:07.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"面试题61_扑克牌中的顺子","level":"1.69","depth":1,"next":{"title":"面试题62_圆圈中最后剩下的数字","level":"1.70","depth":1,"path":"面试题62_圆圈中最后剩下的数字.md","ref":"面试题62_圆圈中最后剩下的数字.md","articles":[]},"previous":{"title":"面试题59I滑动窗口的最大值","level":"1.68","depth":1,"path":"面试题59_I_滑动窗口的最大值.md","ref":"面试题59_I_滑动窗口的最大值.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"面试题61_扑克牌中的顺子.md","mtime":"2020-02-20T04:30:01.232Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

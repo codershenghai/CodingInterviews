@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · My GitBook</title>
+        <title>面试题44_数字序列中某一位的数字 · My GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="面试题3_数组中重复的数字.html" />
+    <link rel="next" href="面试题45_把数组排成最小的数.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="面试题43_1到n整数中1出现的次数.html" />
     
 
     </head>
@@ -107,7 +107,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -718,7 +718,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.49" data-path="面试题44_数字序列中某一位的数字.html">
+        <li class="chapter active" data-level="1.49" data-path="面试题44_数字序列中某一位的数字.html">
             
                 <a href="面试题44_数字序列中某一位的数字.html">
             
@@ -1073,7 +1073,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >面试题44_数字序列中某一位的数字</a>
     </h1>
 </div>
 
@@ -1088,7 +1088,35 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
+                                <h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1>
+<p>&#x6570;&#x5B57;&#x4EE5;0123456789101112131415&#x2026;&#x7684;&#x683C;&#x5F0F;&#x5E8F;&#x5217;&#x5316;&#x5230;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5E8F;&#x5217;&#x4E2D;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x5E8F;&#x5217;&#x4E2D;&#xFF0C;&#x7B2C;5&#x4F4D;&#xFF08;&#x4ECE;&#x4E0B;&#x6807;0&#x5F00;&#x59CB;&#x8BA1;&#x6570;&#xFF09;&#x662F;5&#xFF0C;&#x7B2C;13&#x4F4D;&#x662F;1&#xFF0C;&#x7B2C;19&#x4F4D;&#x662F;4&#xFF0C;&#x7B49;&#x7B49;&#x3002;</p>
+<p>&#x8BF7;&#x5199;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x6C42;&#x4EFB;&#x610F;&#x7B2C;n&#x4F4D;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x5B57;&#x3002;</p>
+<h1 id="&#x9898;&#x89E3;">&#x9898;&#x89E3;</h1>
+<p>&#x8FD9;&#x9053;&#x9898;&#x6709;&#x7279;&#x522B;&#x591A;&#x7684;&#x8FB9;&#x754C;&#x6761;&#x4EF6;&#xFF0C;&#x8981;&#x7279;&#x522B;&#x5C0F;&#x5FC3;&#xFF0C;&#x8C03;&#x4E86;&#x597D;&#x4E45;&#x624D;&#x8C03;&#x51FA;&#x6765;&#x3002;&#x5BF9;&#x4E8E;&#x7B2C;n&#x4F4D;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x627E;&#x5230;&#x8FD9;&#x4F4D;&#x6570;&#x5B57;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x662F;&#x51E0;&#x4F4D;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x786E;&#x5B9A;&#x8FD9;&#x4E2A;&#x6570;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x6700;&#x540E;&#x786E;&#x5B9A;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x8FD9;&#x4E2A;&#x6570;&#x503C;&#x4E2D;&#x7684;&#x54EA;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x3002;</p>
+<p>&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x627E;&#x5230;&#x5E8F;&#x5217;&#x4E2D;1001&#x4F4D;&#x7684;&#x6570;&#x5B57;&#x3002;&#x901A;&#x8FC7;&#x89C2;&#x5BDF;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x4E00;&#x4E9B;&#x89C4;&#x5F8B;&#xFF0C;&#x5E8F;&#x5217;&#x7684;&#x524D;10&#x4F4D;&#x662F;&#x53EA;&#x6709;&#x4E00;&#x4F4D;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x5373;0-9&#x3002;&#x63A5;&#x4E0B;&#x6765;&#x7684;180&#x4F4D;&#x662F;90&#x4E2A;&#x4E24;&#x4F4D;&#x6570;&#xFF0C;&#x5373;10-99&#x3002;&#x518D;&#x63A5;&#x4E0B;&#x6765;&#x7684;2700&#x4F4D;&#x662F;900&#x4E2A;&#x4E09;&#x4F4D;&#x6570;&#xFF0C;&#x5373;100-999&#x3002;&#x518D;&#x63A5;&#x4E0B;&#x6765;&#x7684;36000&#x4F4D;&#x662F;9000&#x4E2A;&#x56DB;&#x4F4D;&#x6570;&#xFF0C;&#x5373;1000-9999......&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x3002;&#x6839;&#x636E;&#x8FD9;&#x4E2A;&#x89C4;&#x5F8B;&#x53EF;&#x4EE5;&#x786E;&#x5B9A;1001&#x662F;&#x4E09;&#x4F4D;&#x6570;&#xFF0C;&#x6B64;&#x65F6;n&#x5C31;&#x662F;&#x4EE5;100&#x4F4D;&#x8D77;&#x70B9;&#x5F00;&#x59CB;&#x7684;&#x4F4D;&#x6570;&#x3002;&#x7136;&#x540E;&#x786E;&#x5B9A;&#x8FD9;&#x4E2A;&#x6570;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x6700;&#x540E;&#x786E;&#x5B9A;&#x6570;&#x503C;value&#x4E2D;&#x7684;&#x90A3;&#x4E2A;&#x6570;&#x5B57;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findNthDigit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+    <span class="hljs-comment">// &#x627E;&#x5230;&#x5E8F;&#x5217;&#x4E2D;&#x7B2C;n&#x4F4D;&#x7684;&#x6570;&#x5B57;&#x662F;&#x51E0;&#x4F4D;&#x6570;&#xFF0C;&#x5B58;&#x5165;digits&#x4E2D;</span>
+    <span class="hljs-keyword">long</span> base = <span class="hljs-number">9</span>;
+    <span class="hljs-keyword">byte</span> digits = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span> (n - base * digits &gt; <span class="hljs-number">0</span>) {
+        n -= base * digits;
+        base *= <span class="hljs-number">10</span>;
+        digits++;
+    }
+    <span class="hljs-comment">// &#x6B64;&#x65F6;n&#x662F;&#x4EE5;digits&#x4F4D;&#x6570;&#x4E3A;&#x8D77;&#x70B9;&#x5F00;&#x59CB;&#x7684;&#x4F4D;&#x6570;&#xFF0C;&#x7136;&#x540E;&#x786E;&#x5B9A;&#x8FD9;&#x4E2A;&#x6570;&#x7684;&#x6570;&#x503C;</span>
+    <span class="hljs-keyword">int</span> value = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; digits; i++)
+        value *= <span class="hljs-number">10</span>;
+    value += n%digits==<span class="hljs-number">0</span> ? n/digits-<span class="hljs-number">1</span> : n/digits;
+
+    <span class="hljs-comment">// &#x786E;&#x5B9A;&#x6570;&#x503C;value&#x4E2D;&#x7684;&#x90A3;&#x4E2A;&#x6570;&#x5B57;</span>
+    <span class="hljs-keyword">int</span> idx = n % digits;
+    <span class="hljs-keyword">if</span> (idx == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> value % <span class="hljs-number">10</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = idx; i &lt; digits; i++)
+        value /= <span class="hljs-number">10</span>;
+    <span class="hljs-keyword">return</span> value % <span class="hljs-number">10</span>;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1116,12 +1144,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="面试题43_1到n整数中1出现的次数.html" class="navigation navigation-prev " aria-label="Previous page: 面试题43_1到n整数中1出现的次数">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="面试题3_数组中重复的数字.html" class="navigation navigation-next " aria-label="Next page: 面试题3_数组中重复的数字">
+                <a href="面试题45_把数组排成最小的数.html" class="navigation navigation-next " aria-label="Next page: 面试题45_把数组排成最小的数">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1132,7 +1160,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.2","depth":1,"next":{"title":"面试题3_数组中重复的数字","level":"1.3","depth":1,"path":"面试题3_数组中重复的数字.md","ref":"面试题3_数组中重复的数字.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"README.md","mtime":"2020-02-08T10:02:07.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"面试题44_数字序列中某一位的数字","level":"1.49","depth":1,"next":{"title":"面试题45_把数组排成最小的数","level":"1.50","depth":1,"path":"面试题45_把数组排成最小的数.md","ref":"面试题45_把数组排成最小的数.md","articles":[]},"previous":{"title":"面试题43_1到n整数中1出现的次数","level":"1.48","depth":1,"path":"面试题43_1到n整数中1出现的次数.md","ref":"面试题43_1到n整数中1出现的次数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"面试题44_数字序列中某一位的数字.md","mtime":"2020-02-24T08:47:09.143Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

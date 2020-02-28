@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · My GitBook</title>
+        <title>面试题55I二叉树的深度 · My GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="面试题3_数组中重复的数字.html" />
+    <link rel="next" href="面试题56_I_数组中数字出现的次数.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="面试题55_II_平衡二叉树.html" />
     
 
     </head>
@@ -107,7 +107,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -887,7 +887,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.62" data-path="面试题55_I_二叉树的深度.html">
+        <li class="chapter active" data-level="1.62" data-path="面试题55_I_二叉树的深度.html">
             
                 <a href="面试题55_I_二叉树的深度.html">
             
@@ -1073,7 +1073,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >面试题55I二叉树的深度</a>
     </h1>
 </div>
 
@@ -1088,7 +1088,45 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
+                                <h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1>
+<p>&#x8F93;&#x5165;&#x4E00;&#x68F5;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x6C42;&#x8BE5;&#x6811;&#x7684;&#x6DF1;&#x5EA6;&#x3002;&#x4ECE;&#x6839;&#x7ED3;&#x70B9;&#x5230;&#x53F6;&#x7ED3;&#x70B9;&#x4F9D;&#x6B21;&#x7ECF;&#x8FC7;&#x7684;&#x7ED3;&#x70B9;&#xFF08;&#x542B;&#x6839;&#x3001;&#x53F6;&#x7ED3;&#x70B9;&#xFF09;&#x5F62;&#x6210;&#x6811;&#x7684;&#x4E00;&#x6761;&#x8DEF;&#x5F84;&#xFF0C;&#x6700;&#x957F;&#x8DEF;&#x5F84;&#x7684;&#x957F;&#x5EA6;&#x4E3A;&#x6811;&#x7684;&#x6DF1;&#x5EA6;&#x3002;</p>
+<h1 id="&#x9898;&#x89E3;&#x4E00;">&#x9898;&#x89E3;&#x4E00;</h1>
+<p>&#x4F7F;&#x7528;&#x9012;&#x5F52;&#x7684;&#x65B9;&#x6CD5;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x9996;&#x5148;&#x786E;&#x5B9A;&#x9012;&#x5F52;&#x7EC8;&#x6B62;&#x7684;&#x6761;&#x4EF6;&#xFF0C;&#x7B2C;&#x4E8C;&#x6B65;&#x627E;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x6700;&#x7EC8;&#x53D6;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x6DF1;&#x5EA6;&#x8F83;&#x5927;&#x7684;&#x4E00;&#x4E2A;&#x52A0;1&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">TreeDepth</span><span class="hljs-params">(TreeNode root)</span> </span>{
+    <span class="hljs-comment">// &#x9012;&#x5F52;&#x7EC8;&#x6B62;&#x7684;&#x6761;&#x4EF6;</span>
+    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">// &#x627E;&#x8FD4;&#x56DE;&#x503C;</span>
+    <span class="hljs-keyword">int</span> left = TreeDepth(root.left);
+    <span class="hljs-keyword">int</span> right = TreeDepth(root.right);
+
+    <span class="hljs-comment">// &#x672C;&#x7EA7;&#x9012;&#x5F52;&#x5E94;&#x8BE5;&#x505A;&#x4EC0;&#x4E48;</span>
+    <span class="hljs-keyword">return</span> Math.max(left, right) + <span class="hljs-number">1</span>;
+}
+</code></pre>
+<h1 id="&#x9898;&#x89E3;&#x4E8C;">&#x9898;&#x89E3;&#x4E8C;</h1>
+<p>&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5C42;&#x6B21;&#x904D;&#x5386;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x4E0E;&#x628A;&#x4E8C;&#x53C9;&#x6811;&#x6253;&#x5370;&#x6210;&#x591A;&#x884C;&#x7C7B;&#x4F3C;&#xFF0C;&#x7528;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x8BB0;&#x5F55;&#x5F53;&#x524D;&#x5C42;&#x8282;&#x70B9;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x5728;&#x5F53;&#x524D;&#x5C42;&#x904D;&#x5386;&#x7ED3;&#x675F;&#x4E4B;&#x540E;&#x5C06;&#x6DF1;&#x5EA6;&#x52A0;1&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">TreeDepth2</span><span class="hljs-params">(TreeNode root)</span> </span>{
+    Queue&lt;TreeNode&gt; queue = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();
+    queue.offer(root);
+    <span class="hljs-keyword">int</span> depth = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> depth;
+    <span class="hljs-keyword">while</span> (!queue.isEmpty()) {
+        <span class="hljs-keyword">int</span> size = queue.size();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) {
+            TreeNode temp = queue.poll();
+            <span class="hljs-keyword">if</span> (temp.left != <span class="hljs-keyword">null</span>)
+                queue.offer(temp.left);
+            <span class="hljs-keyword">if</span> (temp.right != <span class="hljs-keyword">null</span>)
+                queue.offer(temp.right);
+        }
+        depth++;
+    }
+    <span class="hljs-keyword">return</span> depth;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1116,12 +1154,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="面试题55_II_平衡二叉树.html" class="navigation navigation-prev " aria-label="Previous page: 面试题55II平衡二叉树">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="面试题3_数组中重复的数字.html" class="navigation navigation-next " aria-label="Next page: 面试题3_数组中重复的数字">
+                <a href="面试题56_I_数组中数字出现的次数.html" class="navigation navigation-next " aria-label="Next page: 面试题56I数组中数字出现的次数">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1132,7 +1170,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.2","depth":1,"next":{"title":"面试题3_数组中重复的数字","level":"1.3","depth":1,"path":"面试题3_数组中重复的数字.md","ref":"面试题3_数组中重复的数字.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"README.md","mtime":"2020-02-08T10:02:07.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"面试题55I二叉树的深度","level":"1.62","depth":1,"next":{"title":"面试题56I数组中数字出现的次数","level":"1.63","depth":1,"path":"面试题56_I_数组中数字出现的次数.md","ref":"面试题56_I_数组中数字出现的次数.md","articles":[]},"previous":{"title":"面试题55II平衡二叉树","level":"1.61","depth":1,"path":"面试题55_II_平衡二叉树.md","ref":"面试题55_II_平衡二叉树.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"面试题55_I_二叉树的深度.md","mtime":"2020-02-16T14:30:59.324Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

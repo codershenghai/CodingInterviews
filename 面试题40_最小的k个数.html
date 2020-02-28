@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · My GitBook</title>
+        <title>面试题40_最小的k个数 · My GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="面试题3_数组中重复的数字.html" />
+    <link rel="next" href="面试题41_数据流中的中位数.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="面试题39_数组中出现次数超过一半的数字.html" />
     
 
     </head>
@@ -107,7 +107,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -666,7 +666,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.45" data-path="面试题40_最小的k个数.html">
+        <li class="chapter active" data-level="1.45" data-path="面试题40_最小的k个数.html">
             
                 <a href="面试题40_最小的k个数.html">
             
@@ -1073,7 +1073,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >面试题40_最小的k个数</a>
     </h1>
 </div>
 
@@ -1088,7 +1088,92 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
+                                <h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1>
+<p>&#x8F93;&#x5165;&#x6574;&#x6570;&#x6570;&#x7EC4; arr &#xFF0C;&#x627E;&#x51FA;&#x5176;&#x4E2D;&#x6700;&#x5C0F;&#x7684; k &#x4E2A;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x8F93;&#x5165;4&#x3001;5&#x3001;1&#x3001;6&#x3001;2&#x3001;7&#x3001;3&#x3001;8&#x8FD9;8&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x5219;&#x6700;&#x5C0F;&#x7684;4&#x4E2A;&#x6570;&#x5B57;&#x662F;1&#x3001;2&#x3001;3&#x3001;4&#x3002;</p>
+<p>&#x793A;&#x4F8B; 1&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;arr = [3,2,1], k = 2
+&#x8F93;&#x51FA;&#xFF1A;[1,2] &#x6216;&#x8005; [2,1]
+</code></pre><p>&#x793A;&#x4F8B; 2&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;arr = [0,1,2,1], k = 1
+&#x8F93;&#x51FA;&#xFF1A;[0]
+</code></pre><h1 id="&#x9898;&#x89E3;&#x4E00;">&#x9898;&#x89E3;&#x4E00;</h1>
+<p>&#x6700;&#x76F4;&#x89C2;&#x7684;&#x89E3;&#x6CD5;&#x5C31;&#x662F;&#x5BF9;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x7136;&#x540E;&#x8F93;&#x51FA;&#x524D;k&#x4E2A;&#x6570;&#x3002;</p>
+<p>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(nlogn)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(1)&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> ArrayList&lt;Integer&gt; <span class="hljs-title">GetLeastNumbers_Solution</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] input, <span class="hljs-keyword">int</span> k)</span> </span>{
+    ArrayList&lt;Integer&gt; res = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+    <span class="hljs-keyword">if</span> (k &gt; input.length)
+        <span class="hljs-keyword">return</span> res;
+    Arrays.sort(input);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; k; i++)
+        res.add(input[i]);
+    <span class="hljs-keyword">return</span> res;
+}
+</code></pre>
+<h1 id="&#x9898;&#x89E3;&#x4E8C;">&#x9898;&#x89E3;&#x4E8C;</h1>
+<p>&#x548C;&#x4E0A;&#x4E00;&#x9898;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x5FEB;&#x6392;&#x7684;&#x601D;&#x60F3;&#x3002;&#x5F53;pivot&#x7684;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#x4E3A;k&#x65F6;&#xFF0C;pivot&#x5DE6;&#x8FB9;&#x7684;k&#x4E2A;&#x6570;&#x5B57;&#x90FD;&#x5C0F;&#x4E8E;pivot&#xFF0C;pivot&#x53F3;&#x8FB9;&#x7684;n-k&#x4E2A;&#x6570;&#x5B57;&#x90FD;&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;pivot&#x3002;&#x82E5;&#x627E;&#x5230;&#x8FD9;&#x4E0E;&#x7684;pivot&#xFF0C;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x6570;&#x7EC4;&#x7684;&#x524D;k&#x4E2A;&#x5143;&#x7D20;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(n)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(1)&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> ArrayList&lt;Integer&gt; <span class="hljs-title">GetLeastNumbers_Solution2</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] input, <span class="hljs-keyword">int</span> k)</span> </span>{
+    ArrayList&lt;Integer&gt; res = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+    <span class="hljs-keyword">if</span> (k &gt; input.length || input.length == <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> res;
+    <span class="hljs-keyword">int</span> pivotPos = Partition(input, <span class="hljs-number">0</span>, input.length-<span class="hljs-number">1</span>);
+    <span class="hljs-keyword">while</span> (k &lt; input.length &amp;&amp; pivotPos != k) {
+        <span class="hljs-keyword">if</span> (pivotPos &gt; k)
+            pivotPos = Partition(input, <span class="hljs-number">0</span>, pivotPos-<span class="hljs-number">1</span>);
+        <span class="hljs-keyword">else</span> pivotPos = Partition(input, pivotPos+<span class="hljs-number">1</span>, input.length-<span class="hljs-number">1</span>);
+    }
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; k; i++)
+        res.add(input[i]);
+    <span class="hljs-keyword">return</span> res;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Partition</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] array, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span> </span>{
+    <span class="hljs-keyword">int</span> pivot = array[left];
+    <span class="hljs-keyword">while</span> (left &lt; right) {
+        <span class="hljs-keyword">while</span> (left &lt; right &amp;&amp; array[right] &gt;= pivot) right--;
+        array[left] = array[right];
+        <span class="hljs-keyword">while</span> (left &lt; right &amp;&amp; array[left] &lt;= pivot) left++;
+        array[right] = array[left];
+    }
+    array[left] = pivot;
+    <span class="hljs-keyword">return</span> left;
+}
+</code></pre>
+<h1 id="&#x9898;&#x89E3;&#x4E09;">&#x9898;&#x89E3;&#x4E09;</h1>
+<p>&#x5229;&#x7528;&#x6700;&#x5927;&#x5806;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x5927;&#x5C0F;&#x4E3A;k&#x7684;&#x6700;&#x5927;&#x5806;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x8FD9;&#x6700;&#x5C0F;&#x7684;k&#x4E2A;&#x6570;&#x3002;</p>
+<p>&#x904D;&#x5386;input&#xFF0C;&#x4E0E;&#x6700;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x3002;&#x5F53;&#x8F93;&#x5165;&#x7684;&#x6570;&#x5B57;&#x6BD4;&#x8FD9;k&#x4E2A;&#x6570;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#x8FD8;&#x5C0F;&#x65F6;&#xFF0C;&#x5219;&#x7528;&#x8F93;&#x5165;&#x7684;&#x6570;&#x5B57;&#x66FF;&#x6362;&#x8FD9;k&#x4E2A;&#x6570;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#x3002;</p>
+<p>&#x5C3D;&#x7BA1;&#x8FD9;&#x79CD;&#x7B97;&#x6CD5;&#x7684;&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(nlogn)&#xFF0C;&#x6BD4;&#x9898;&#x89E3;&#x4E8C;&#x6162;&#x4E00;&#x4E9B;&#xFF0C;&#x4F46;&#x5B83;&#x6709;&#x4E24;&#x4E2A;&#x4F18;&#x70B9;&#xFF1A;</p>
+<ol>
+<li>&#x6CA1;&#x6709;&#x4FEE;&#x6539;&#x8F93;&#x5165;&#x6570;&#x7EC4;&#x7684;&#x987A;&#x5E8F;&#x3002;&#xFF08;&#x6240;&#x6709;&#x64CD;&#x4F5C;&#x90FD;&#x662F;&#x5728;&#x6700;&#x5927;&#x5806;&#x4E2D;&#x5B8C;&#x6210;&#x7684;&#xFF09;</li>
+<li>&#x9002;&#x5408;&#x6D77;&#x91CF;&#x8F93;&#x5165;&#x6570;&#x636E;&#x3002;&#xFF08;&#x5C24;&#x5176;&#x662F;&#x5F53;&#x8F93;&#x5165;&#x6570;&#x7EC4;&#x5F88;&#x5927;&#x800C;k&#x5F88;&#x5C0F;&#x65F6;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x53EA;&#x9700;&#x8981;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x5927;&#x5C0F;&#x4E3A;k&#x7684;&#x6700;&#x5927;&#x5806;&#x5373;&#x53EF;&#xFF09;</li>
+</ol>
+<p>&#x65F6;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(nlogn)&#xFF0C;&#x7A7A;&#x95F4;&#x590D;&#x6742;&#x5EA6;&#x4E3A;O(1)&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> ArrayList&lt;Integer&gt; <span class="hljs-title">GetLeastNumbers_Solution3</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] input, <span class="hljs-keyword">int</span> k)</span> </span>{
+    ArrayList&lt;Integer&gt; res = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+    <span class="hljs-keyword">if</span> (k &lt;= <span class="hljs-number">0</span> || k &gt; input.length)
+        <span class="hljs-keyword">return</span> res;
+
+    <span class="hljs-comment">// &#x6784;&#x5EFA;&#x6700;&#x5927;&#x5806;</span>
+    PriorityQueue&lt;Integer&gt; maxHeap = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;(k, <span class="hljs-keyword">new</span> Comparator&lt;Integer&gt;() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> </span>{
+            <span class="hljs-keyword">return</span> o2.compareTo(o1);
+        }
+    });
+
+    <span class="hljs-comment">// &#x904D;&#x5386;input, &#x5E76;&#x4E0E;&#x6700;&#x5927;&#x5806;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x503C;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : input) {
+        <span class="hljs-keyword">if</span> (maxHeap.size() &lt; k)
+            maxHeap.offer(num);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!maxHeap.isEmpty() &amp;&amp; maxHeap.peek() &gt; num) {
+            maxHeap.poll();
+            maxHeap.offer(num);
+        }
+    }
+    res.addAll(maxHeap);
+    <span class="hljs-keyword">return</span> res;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1116,12 +1201,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="面试题39_数组中出现次数超过一半的数字.html" class="navigation navigation-prev " aria-label="Previous page: 面试题39_数组中出现次数超过一半的数字">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="面试题3_数组中重复的数字.html" class="navigation navigation-next " aria-label="Next page: 面试题3_数组中重复的数字">
+                <a href="面试题41_数据流中的中位数.html" class="navigation navigation-next " aria-label="Next page: 面试题41_数据流中的中位数">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1132,7 +1217,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.2","depth":1,"next":{"title":"面试题3_数组中重复的数字","level":"1.3","depth":1,"path":"面试题3_数组中重复的数字.md","ref":"面试题3_数组中重复的数字.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"README.md","mtime":"2020-02-08T10:02:07.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"面试题40_最小的k个数","level":"1.45","depth":1,"next":{"title":"面试题41_数据流中的中位数","level":"1.46","depth":1,"path":"面试题41_数据流中的中位数.md","ref":"面试题41_数据流中的中位数.md","articles":[]},"previous":{"title":"面试题39_数组中出现次数超过一半的数字","level":"1.44","depth":1,"path":"面试题39_数组中出现次数超过一半的数字.md","ref":"面试题39_数组中出现次数超过一半的数字.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"面试题40_最小的k个数.md","mtime":"2020-02-28T14:00:35.307Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

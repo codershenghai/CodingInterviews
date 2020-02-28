@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · My GitBook</title>
+        <title>面试题15_二进制中1的个数 · My GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="面试题3_数组中重复的数字.html" />
+    <link rel="next" href="面试题16_数值的整数次方.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="面试题14_剪绳子.html" />
     
 
     </head>
@@ -107,7 +107,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -315,7 +315,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.18" data-path="面试题15_二进制中1的个数.html">
+        <li class="chapter active" data-level="1.18" data-path="面试题15_二进制中1的个数.html">
             
                 <a href="面试题15_二进制中1的个数.html">
             
@@ -1073,7 +1073,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >面试题15_二进制中1的个数</a>
     </h1>
 </div>
 
@@ -1088,7 +1088,47 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
+                                <h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1>
+<p>&#x8BF7;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x8F93;&#x51FA;&#x8BE5;&#x6570;&#x4E8C;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x4E2D; 1 &#x7684;&#x4E2A;&#x6570;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x628A; 9 &#x8868;&#x793A;&#x6210;&#x4E8C;&#x8FDB;&#x5236;&#x662F; 1001&#xFF0C;&#x6709; 2 &#x4F4D;&#x662F; 1&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x8F93;&#x5165; 9&#xFF0C;&#x5219;&#x8BE5;&#x51FD;&#x6570;&#x8F93;&#x51FA; 2&#x3002;</p>
+<p>&#x793A;&#x4F8B; 1&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;00000000000000000000000000001011
+&#x8F93;&#x51FA;&#xFF1A;3
+&#x89E3;&#x91CA;&#xFF1A;&#x8F93;&#x5165;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4E32; 00000000000000000000000000001011 &#x4E2D;&#xFF0C;&#x5171;&#x6709;&#x4E09;&#x4F4D;&#x4E3A; &apos;1&apos;&#x3002;
+</code></pre><p>&#x793A;&#x4F8B; 2&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;00000000000000000000000010000000
+&#x8F93;&#x51FA;&#xFF1A;1
+&#x89E3;&#x91CA;&#xFF1A;&#x8F93;&#x5165;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4E32; 00000000000000000000000010000000 &#x4E2D;&#xFF0C;&#x5171;&#x6709;&#x4E00;&#x4F4D;&#x4E3A; &apos;1&apos;&#x3002;
+</code></pre><p>&#x793A;&#x4F8B; 3&#xFF1A;</p>
+<pre><code>&#x8F93;&#x5165;&#xFF1A;11111111111111111111111111111101
+&#x8F93;&#x51FA;&#xFF1A;31
+&#x89E3;&#x91CA;&#xFF1A;&#x8F93;&#x5165;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4E32; 11111111111111111111111111111101 &#x4E2D;&#xFF0C;&#x5171;&#x6709; 31 &#x4F4D;&#x4E3A; &apos;1&apos;&#x3002;
+</code></pre><h1 id="&#x9898;&#x89E3;&#x4E00;">&#x9898;&#x89E3;&#x4E00;</h1>
+<p>&#x6700;&#x76F4;&#x89C2;&#x7684;&#x60F3;&#x6CD5;&#x662F;&#x5C06;&#x8F93;&#x5165;&#x7684;&#x6570;&#x5B57;&#x4E0D;&#x65AD;&#x4E0E;1&#x505A;&#x4E0E;&#x8FD0;&#x7B97;&#xFF0C;&#x6765;&#x5224;&#x65AD;&#x6570;&#x5B57;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x5F62;&#x5F0F;&#x4E2D;&#x6700;&#x4F4E;&#x4F4D;&#x662F;&#x5426;&#x4E3A;1&#xFF0C;&#x901A;&#x8FC7;&#x4E0D;&#x65AD;&#x53F3;&#x79FB;&#x8FD9;&#x4E2A;&#x6570;&#x6765;&#x5224;&#x65AD;&#x8FD9;&#x4E2A;&#x6570;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4E2D;1&#x7684;&#x4E2A;&#x6570;&#x3002;&#x4F46;&#x662F;&#x8FD9;&#x79CD;&#x7B97;&#x6CD5;&#x4E0D;&#x652F;&#x6301;&#x8D1F;&#x6570;&#xFF0C;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x8D1F;&#x6570;&#xFF0C;&#x79FB;&#x4F4D;&#x540E;&#x7684;&#x6700;&#x9AD8;&#x4F4D;&#x6C38;&#x8FDC;&#x90FD;&#x662F;1&#xFF0C;&#x5982;&#x679C;&#x4E00;&#x76F4;&#x505A;&#x53F3;&#x79FB;&#x8FD0;&#x7B97;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x6570;&#x6700;&#x7EC8;&#x4F1A;&#x53D8;&#x6210;0xFFFFFFFF&#xFF0C;&#x800C;&#x4E0D;&#x662F;0&#xFF0C;&#x4ECE;&#x800C;&#x9677;&#x5165;&#x6B7B;&#x5FAA;&#x73AF;&#x3002;</p>
+<p>&#x4E3A;&#x4E86;&#x6539;&#x8FDB;&#x8FD9;&#x4E2A;&#x7F3A;&#x70B9;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E0D;&#x53F3;&#x79FB;&#x8F93;&#x5165;&#x7684;&#x6570;&#x5B57;&#xFF0C;&#x800C;&#x662F;&#x9996;&#x5148;&#x5C06;&#x8F93;&#x5165;&#x7684;&#x6570;&#x5B57;&#x4E0E;1&#x505A;&#x4E0E;&#x8FD0;&#x7B97;&#xFF0C;&#x5224;&#x65AD;&#x6570;&#x5B57;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x5F62;&#x5F0F;&#x4E2D;&#x6700;&#x4F4E;&#x4F4D;&#x662F;&#x5426;&#x4E3A;1&#x3002;&#x7136;&#x540E;&#x5C06;1&#x5DE6;&#x79FB;&#x4E00;&#x4F4D;&#x5F97;&#x5230;2&#xFF0C;&#x518D;&#x548C;&#x8F93;&#x5165;&#x7684;&#x6570;&#x5B57;&#x505A;&#x4E0E;&#x8FD0;&#x7B97;&#xFF0C;&#x5224;&#x65AD;&#x6570;&#x5B57;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x5F62;&#x5F0F;&#x4E2D;&#x7684;&#x6B21;&#x4F4E;&#x4F4D;&#x662F;&#x4E0D;&#x662F;1......&#x8FD9;&#x6837;&#x4E0D;&#x65AD;&#x5DE6;&#x79FB;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7EDF;&#x8BA1;&#x51FA;&#x8F93;&#x5165;&#x7684;&#x6570;&#x5B57;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x5F62;&#x5F0F;&#x4E2D;1&#x7684;&#x4E2A;&#x6570;&#x3002;</p>
+<p>&#x8FD9;&#x79CD;&#x89E3;&#x6CD5;&#x5FAA;&#x73AF;&#x7684;&#x6B21;&#x6570;&#x7B49;&#x4E8E;&#x4E8C;&#x8FDB;&#x5236;&#x6574;&#x6570;&#x7684;&#x4F4D;&#x6570;&#xFF0C;&#x5982;32&#x4F4D;&#x6574;&#x6570;&#x5C31;&#x9700;&#x8981;&#x5FAA;&#x73AF;32&#x6B21;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hammingWeight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> flag = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">while</span> (flag != <span class="hljs-number">0</span>) {
+        <span class="hljs-keyword">if</span> ((n&amp;flag) != <span class="hljs-number">0</span>)
+            count++;
+        flag &lt;&lt;= <span class="hljs-number">1</span>;
+    }
+    <span class="hljs-keyword">return</span> count;
+}
+</code></pre>
+<h1 id="&#x9898;&#x89E3;&#x4E8C;">&#x9898;&#x89E3;&#x4E8C;</h1>
+<p>&#x5BF9;&#x4E8E;Hamming Weight&#xFF0C;&#x8FD8;&#x6709;&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x6280;&#x5DE7;&#x6027;&#x7684;&#x89E3;&#x6CD5;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x77E5;&#x9053;&#x4E00;&#x4E2A;&#x7ED3;&#x8BBA;&#xFF1A;<strong>&#x628A;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x51CF;&#x53BB;1&#xFF0C;&#x518D;&#x548C;&#x539F;&#x6574;&#x6570;&#x505A;&#x4E0E;&#x8FD0;&#x7B97;&#xFF0C;&#x7ED3;&#x679C;&#x4F1A;&#x5C06;&#x539F;&#x6574;&#x6570;&#x6700;&#x53F3;&#x8FB9;&#x7684;1&#x53D8;&#x6210;0</strong>&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x4E0D;&#x65AD;&#x5FAA;&#x73AF;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#xFF0C;&#x5F53;&#x539F;&#x6574;&#x6570;&#x4E3A;0&#x65F6;&#x505C;&#x6B62;&#xFF0C;&#x5373;&#x53EF;&#x7EDF;&#x8BA1;&#x51FA;&#x539F;&#x6574;&#x6570;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4E2D;1&#x7684;&#x4E2A;&#x6570;&#x3002;&#x8FD9;&#x79CD;&#x89E3;&#x6CD5;&#x5FAA;&#x73AF;&#x7684;&#x6B21;&#x6570;&#x7B49;&#x4E8E;&#x4E8C;&#x8FDB;&#x5236;&#x6574;&#x6570;&#x4E2D;1&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x6709;&#x51E0;&#x4E2A;1&#x5C31;&#x53EA;&#x9700;&#x8981;&#x5FAA;&#x73AF;&#x51E0;&#x6B21;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hammingWeight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) {
+        count++;
+        n = (n - <span class="hljs-number">1</span>) &amp; n; <span class="hljs-comment">// &#x6BCF;&#x6B21;&#x5FAA;&#x73AF;&#x90FD;&#x5C06;&#x6700;&#x53F3;&#x8FB9;&#x7684;1&#x53D8;&#x4E3A;0</span>
+    }
+    <span class="hljs-keyword">return</span> count;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -1116,12 +1156,12 @@
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="面试题14_剪绳子.html" class="navigation navigation-prev " aria-label="Previous page: 面试题14_剪绳子">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="面试题3_数组中重复的数字.html" class="navigation navigation-next " aria-label="Next page: 面试题3_数组中重复的数字">
+                <a href="面试题16_数值的整数次方.html" class="navigation navigation-next " aria-label="Next page: 面试题16_数值的整数次方">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1132,7 +1172,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.2","depth":1,"next":{"title":"面试题3_数组中重复的数字","level":"1.3","depth":1,"path":"面试题3_数组中重复的数字.md","ref":"面试题3_数组中重复的数字.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"introduction.md","ref":"introduction.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"README.md","mtime":"2020-02-08T10:02:07.392Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"面试题15_二进制中1的个数","level":"1.18","depth":1,"next":{"title":"面试题16_数值的整数次方","level":"1.19","depth":1,"path":"面试题16_数值的整数次方.md","ref":"面试题16_数值的整数次方.md","articles":[]},"previous":{"title":"面试题14_剪绳子","level":"1.17","depth":1,"path":"面试题14_剪绳子.md","ref":"面试题14_剪绳子.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"面试题15_二进制中1的个数.md","mtime":"2020-02-26T07:47:47.021Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-28T14:57:55.352Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
