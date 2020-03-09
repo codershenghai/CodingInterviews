@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>面试题13_机器人的运动范围 · My GitBook</title>
+        <title>面试题34_二叉树中和为某一值的路径 · My GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -53,10 +53,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="面试题14_剪绳子.html" />
+    <link rel="next" href="面试题35_复杂链表的复制.html" />
     
     
-    <link rel="prev" href="面试题12_矩阵中的路径.html" />
+    <link rel="prev" href="面试题33_二叉搜索树的后序遍历序列.html" />
     
 
     </head>
@@ -289,7 +289,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.16" data-path="面试题13_机器人的运动范围.html">
+        <li class="chapter " data-level="1.16" data-path="面试题13_机器人的运动范围.html">
             
                 <a href="面试题13_机器人的运动范围.html">
             
@@ -588,7 +588,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.39" data-path="面试题34_二叉树中和为某一值的路径.html">
+        <li class="chapter active" data-level="1.39" data-path="面试题34_二叉树中和为某一值的路径.html">
             
                 <a href="面试题34_二叉树中和为某一值的路径.html">
             
@@ -1073,7 +1073,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >面试题13_机器人的运动范围</a>
+        <a href="." >面试题34_二叉树中和为某一值的路径</a>
     </h1>
 </div>
 
@@ -1089,41 +1089,63 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x9898;&#x76EE;&#x63CF;&#x8FF0;">&#x9898;&#x76EE;&#x63CF;&#x8FF0;</h1>
-<p>&#x5730;&#x4E0A;&#x6709;&#x4E00;&#x4E2A;m&#x884C;n&#x5217;&#x7684;&#x65B9;&#x683C;&#xFF0C;&#x4ECE;&#x5750;&#x6807; [0,0] &#x5230;&#x5750;&#x6807; [m-1,n-1] &#x3002;&#x4E00;&#x4E2A;&#x673A;&#x5668;&#x4EBA;&#x4ECE;&#x5750;&#x6807; [0, 0] &#x7684;&#x683C;&#x5B50;&#x5F00;&#x59CB;&#x79FB;&#x52A8;&#xFF0C;&#x5B83;&#x6BCF;&#x6B21;&#x53EF;&#x4EE5;&#x5411;&#x5DE6;&#x3001;&#x53F3;&#x3001;&#x4E0A;&#x3001;&#x4E0B;&#x79FB;&#x52A8;&#x4E00;&#x683C;&#xFF08;&#x4E0D;&#x80FD;&#x79FB;&#x52A8;&#x5230;&#x65B9;&#x683C;&#x5916;&#xFF09;&#xFF0C;&#x4E5F;&#x4E0D;&#x80FD;&#x8FDB;&#x5165;&#x884C;&#x5750;&#x6807;&#x548C;&#x5217;&#x5750;&#x6807;&#x7684;&#x6570;&#x4F4D;&#x4E4B;&#x548C;&#x5927;&#x4E8E;k&#x7684;&#x683C;&#x5B50;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;k&#x4E3A;18&#x65F6;&#xFF0C;&#x673A;&#x5668;&#x4EBA;&#x80FD;&#x591F;&#x8FDB;&#x5165;&#x65B9;&#x683C; [35, 37] &#xFF0C;&#x56E0;&#x4E3A;3+5+3+7=18&#x3002;&#x4F46;&#x5B83;&#x4E0D;&#x80FD;&#x8FDB;&#x5165;&#x65B9;&#x683C; [35, 38]&#xFF0C;&#x56E0;&#x4E3A;3+5+3+8=19&#x3002;&#x8BF7;&#x95EE;&#x8BE5;&#x673A;&#x5668;&#x4EBA;&#x80FD;&#x591F;&#x5230;&#x8FBE;&#x591A;&#x5C11;&#x4E2A;&#x683C;&#x5B50;&#xFF1F;</p>
-<p>&#x793A;&#x4F8B; 1&#xFF1A;</p>
-<pre><code>&#x8F93;&#x5165;&#xFF1A;m = 2, n = 3, k = 1
-&#x8F93;&#x51FA;&#xFF1A;3
-</code></pre><p>&#x793A;&#x4F8B; 2&#xFF1A;</p>
-<pre><code>&#x8F93;&#x5165;&#xFF1A;m = 3, n = 1, k = 0
-&#x8F93;&#x51FA;&#xFF1A;1
+<p>&#x8F93;&#x5165;&#x4E00;&#x68F5;&#x4E8C;&#x53C9;&#x6811;&#x548C;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#xFF0C;&#x6253;&#x5370;&#x51FA;&#x4E8C;&#x53C9;&#x6811;&#x4E2D;&#x8282;&#x70B9;&#x503C;&#x7684;&#x548C;&#x4E3A;&#x8F93;&#x5165;&#x6574;&#x6570;&#x7684;&#x6240;&#x6709;&#x8DEF;&#x5F84;&#x3002;&#x4ECE;&#x6811;&#x7684;&#x6839;&#x8282;&#x70B9;&#x5F00;&#x59CB;&#x5F80;&#x4E0B;&#x4E00;&#x76F4;&#x5230;&#x53F6;&#x8282;&#x70B9;&#x6240;&#x7ECF;&#x8FC7;&#x7684;&#x8282;&#x70B9;&#x5F62;&#x6210;&#x4E00;&#x6761;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;
+&#x7ED9;&#x5B9A;&#x5982;&#x4E0B;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x4EE5;&#x53CA;&#x76EE;&#x6807;&#x548C; <code>sum = 22</code>&#xFF0C;</p>
+<pre><code class="lang-python">              <span class="hljs-number">5</span>
+             / \
+            <span class="hljs-number">4</span>   <span class="hljs-number">8</span>
+           /   / \
+          <span class="hljs-number">11</span>  <span class="hljs-number">13</span>  <span class="hljs-number">4</span>
+         /  \    / \
+        <span class="hljs-number">7</span>    <span class="hljs-number">2</span>  <span class="hljs-number">5</span>   <span class="hljs-number">1</span>
+</code></pre>
+<p>&#x8FD4;&#x56DE;:</p>
+<pre><code>[
+   [5,4,11,2],
+   [5,8,4,5]
+]
 </code></pre><h1 id="&#x9898;&#x89E3;">&#x9898;&#x89E3;</h1>
-<p>&#x4F7F;&#x7528;&#x56DE;&#x6EAF;&#x6CD5;&#xFF0C;&#x5C06;&#x673A;&#x5668;&#x4EBA;&#x80FD;&#x591F;&#x6210;&#x529F;&#x8BBF;&#x95EE;&#x7684;&#x4F4D;&#x7F6E;&#x6807;&#x8BB0;&#x4E3A;true&#xFF0C;&#x9632;&#x6B62;&#x91CD;&#x590D;&#x8BBF;&#x95EE;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x5F80;&#x56DB;&#x4E2A;&#x65B9;&#x5411;&#x5C1D;&#x8BD5;&#x3002;&#x8FD8;&#x9700;&#x8981;&#x5199;&#x4E00;&#x4E2A;&#x83B7;&#x53D6;&#x6570;&#x4F4D;&#x4E4B;&#x548C;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x9012;&#x5F52;&#x7EC8;&#x6B62;&#x6761;&#x4EF6;&#x3002;</p>
-<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">movingCount</span><span class="hljs-params">(<span class="hljs-keyword">int</span> rows, <span class="hljs-keyword">int</span> cols, <span class="hljs-keyword">int</span> threshold)</span> </span>{
-    <span class="hljs-keyword">boolean</span>[] flag = <span class="hljs-keyword">new</span> <span class="hljs-keyword">boolean</span>[rows * cols];
-    <span class="hljs-keyword">return</span> backTrack(threshold, rows, cols, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, flag);
+<p>&#x672C;&#x9898;&#x7684;&#x8DEF;&#x5F84;&#x6307;&#x4ECE;&#x6811;&#x7684;&#x6839;&#x8282;&#x70B9;&#x5F00;&#x59CB;&#x4E00;&#x76F4;&#x5230;&#x53F6;&#x8282;&#x70B9;&#x6240;&#x7ECF;&#x8FC7;&#x7684;&#x8282;&#x70B9;&#x5F62;&#x6210;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x7531;&#x4E8E;&#x53EA;&#x6709;&#x524D;&#x5E8F;&#x904D;&#x5386;&#x662F;&#x5148;&#x8BBF;&#x95EE;&#x6839;&#x8282;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;&#x524D;&#x5E8F;&#x904D;&#x5386;+&#x56DE;&#x6EAF;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5927;&#x5BB9;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x76DB;&#x653E;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x7136;&#x540E;&#x5F00;&#x59CB;&#x56DE;&#x6EAF;&#x3002;
+&#x56DE;&#x6EAF;&#x51FD;&#x6570;&#x6709;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;</p>
+<ol>
+<li>&#x9996;&#x5148;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6EE1;&#x8DB3;&#x7ED3;&#x675F;&#x6761;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x6EE1;&#x8DB3;&#x5C31;&#x5C06;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5230;&#x5BB9;&#x5668;&#x4E2D;&#x3002;</li>
+<li>&#x7136;&#x540E;&#x904D;&#x5386;&#x53EF;&#x9009;&#x62E9;&#x7684;&#x5217;&#x8868;&#xFF08;&#x672C;&#x9898;&#x7684;&#x9009;&#x62E9;&#x5217;&#x8868;&#x662F;&#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#xFF09;&#xFF0C;&#x5728;&#x904D;&#x5386;&#x7ED3;&#x675F;&#x540E;&#x8FDB;&#x884C;&#x56DE;&#x6EAF;&#x3002;</li>
+</ol>
+<p>&#x6700;&#x540E;&#x522B;&#x5FD8;&#x4E86;&#xFF0C;&#x7531;&#x4E8E;&#x9898;&#x76EE;&#x8981;&#x6C42;&#x5728;&#x8FD4;&#x56DE;&#x503C;&#x7684;list&#x4E2D;&#xFF0C;&#x6570;&#x7EC4;&#x957F;&#x5EA6;&#x5927;&#x7684;&#x6570;&#x7EC4;&#x9760;&#x524D;&#xFF0C;&#x56E0;&#x6B64;&#x8FD8;&#x8981;&#x5BF9;&#x5F97;&#x5230;&#x7684;&#x5927;&#x5BB9;&#x5668;&#x6309;&#x7167;&#x8DEF;&#x5F84;&#x7684;&#x957F;&#x5EA6;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</p>
+<pre><code class="lang-java">List&lt;List&lt;Integer&gt;&gt; res = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();
+<span class="hljs-keyword">public</span> List&lt;List&lt;Integer&gt;&gt; pathSum(TreeNode root, <span class="hljs-keyword">int</span> target) {
+    <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> res;
+    BackTrack(root, target, <span class="hljs-keyword">new</span> ArrayList&lt;&gt;(), <span class="hljs-number">0</span>);
+
+    <span class="hljs-comment">// &#x5B9A;&#x4E49;&#x6BD4;&#x8F83;&#x5668;</span>
+    Collections.sort(res, <span class="hljs-keyword">new</span> Comparator&lt;List&lt;Integer&gt;&gt;() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(List&lt;Integer&gt; o1, List&lt;Integer&gt; o2)</span> </span>{
+            <span class="hljs-keyword">return</span> o2.size() - o1.size();
+        }
+    });
+    <span class="hljs-keyword">return</span> res;
 }
 
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">backTrack</span><span class="hljs-params">(<span class="hljs-keyword">int</span> threshold, <span class="hljs-keyword">int</span> rows, <span class="hljs-keyword">int</span> cols, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j, <span class="hljs-keyword">boolean</span>[] flag)</span> </span>{
-    <span class="hljs-comment">// &#x9012;&#x5F52;&#x7EC8;&#x6B62;&#x6761;&#x4EF6;</span>
-    <span class="hljs-keyword">int</span> index = i * cols + j;
-    <span class="hljs-keyword">if</span> (i&lt;<span class="hljs-number">0</span> || j&lt;<span class="hljs-number">0</span> || i&gt;=rows || j&gt;=cols || getDigitSum(i)+getDigitSum(j) &gt; threshold || flag[index])
-        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-    flag[index] = <span class="hljs-keyword">true</span>;
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">BackTrack</span><span class="hljs-params">(TreeNode node, <span class="hljs-keyword">int</span> target, ArrayList&lt;Integer&gt; path, <span class="hljs-keyword">int</span> currentSum)</span> </span>{
+    currentSum += node.val;
+    path.add(node.val);
+
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x5230;&#x8FBE;&#x53F6;&#x8282;&#x70B9;&#x4E14;&#x8DEF;&#x5F84;&#x548C;&#x7B49;&#x4E8E;target&#xFF0C;&#x5219;&#x5C06;&#x5F97;&#x5230;&#x4E00;&#x6761;&#x7B26;&#x5408;&#x8981;&#x6C42;&#x7684;&#x8DEF;&#x5F84;</span>
+    <span class="hljs-keyword">if</span> (node.left == <span class="hljs-keyword">null</span> &amp;&amp; node.right == <span class="hljs-keyword">null</span> &amp;&amp; currentSum == target)
+        res.add(<span class="hljs-keyword">new</span> ArrayList&lt;&gt;(path));
+
+    <span class="hljs-comment">// &#x5982;&#x679C;&#x4E0D;&#x662F;&#x53F6;&#x8282;&#x70B9;&#xFF0C;&#x90A3;&#x4E48;&#x7EE7;&#x7EED;&#x9012;&#x5F52;&#x904D;&#x5386;&#x5B83;&#x7684;&#x5B50;&#x8282;&#x70B9;</span>
+    <span class="hljs-keyword">if</span> (node.left != <span class="hljs-keyword">null</span>)
+        BackTrack(node.left, target, path, currentSum);
+    <span class="hljs-keyword">if</span> (node.right != <span class="hljs-keyword">null</span>)
+        BackTrack(node.right, target, path, currentSum);
 
     <span class="hljs-comment">// &#x56DE;&#x6EAF;</span>
-    <span class="hljs-keyword">return</span> backTrack(threshold, rows, cols, i-<span class="hljs-number">1</span>, j, flag) +
-           backTrack(threshold, rows, cols, i+<span class="hljs-number">1</span>, j, flag) +
-           backTrack(threshold, rows, cols, i, j-<span class="hljs-number">1</span>, flag) +
-           backTrack(threshold, rows, cols, i, j+<span class="hljs-number">1</span>, flag) + <span class="hljs-number">1</span>;
-}
-
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getDigitSum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> num)</span> </span>{
-    <span class="hljs-keyword">int</span> digitSum = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">while</span> (num != <span class="hljs-number">0</span>) {
-        digitSum += num % <span class="hljs-number">10</span>;
-        num /= <span class="hljs-number">10</span>;
-    }
-    <span class="hljs-keyword">return</span> digitSum;
+    path.remove(path.size()-<span class="hljs-number">1</span>);
 }
 </code></pre>
 
@@ -1153,12 +1175,12 @@
 
             
                 
-                <a href="面试题12_矩阵中的路径.html" class="navigation navigation-prev " aria-label="Previous page: 面试题12_矩阵中的路径">
+                <a href="面试题33_二叉搜索树的后序遍历序列.html" class="navigation navigation-prev " aria-label="Previous page: 面试题33_二叉搜索树的后序遍历序列">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="面试题14_剪绳子.html" class="navigation navigation-next " aria-label="Next page: 面试题14_剪绳子">
+                <a href="面试题35_复杂链表的复制.html" class="navigation navigation-next " aria-label="Next page: 面试题35_复杂链表的复制">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1169,7 +1191,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"面试题13_机器人的运动范围","level":"1.16","depth":1,"next":{"title":"面试题14_剪绳子","level":"1.17","depth":1,"path":"面试题14_剪绳子.md","ref":"面试题14_剪绳子.md","articles":[]},"previous":{"title":"面试题12_矩阵中的路径","level":"1.15","depth":1,"path":"面试题12_矩阵中的路径.md","ref":"面试题12_矩阵中的路径.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"面试题13_机器人的运动范围.md","mtime":"2020-03-09T16:25:33.445Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-09T16:28:53.984Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"面试题34_二叉树中和为某一值的路径","level":"1.39","depth":1,"next":{"title":"面试题35_复杂链表的复制","level":"1.40","depth":1,"path":"面试题35_复杂链表的复制.md","ref":"面试题35_复杂链表的复制.md","articles":[]},"previous":{"title":"面试题33_二叉搜索树的后序遍历序列","level":"1.38","depth":1,"path":"面试题33_二叉搜索树的后序遍历序列.md","ref":"面试题33_二叉搜索树的后序遍历序列.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","code"],"root":".","styles":{"website":"styles/website.css"},"pluginsConfig":{"search-pro":{},"code":{"copyButtons":true},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"shenghaishxt","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"My GitBook","language":"zh-hans","output.name":"site","links":{"sidebar":{"我的主页":"http://zhangshenghai.com"}},"gitbook":"3.2.3","description":"记录成长"},"file":{"path":"面试题34_二叉树中和为某一值的路径.md","mtime":"2020-03-09T16:25:33.452Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-09T16:28:53.984Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
